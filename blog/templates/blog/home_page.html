@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Welcome to margret's site</title>
+	<title>Welcome to margret's Blog</title>
 </head>
 <body>
-<h1>This is my blog</h1>
+<h1>Hi.I am Margret.Welcome to my blog.</h1>
 
-<h2>How to Eat Very Quickly</h2>
-<p>have you ever wanted to know how to eat quickly? Now I can tell you just read this tpost!</p>
+<h2>My First Blog Post</h2>
+<p>Here is my first blog post.I am a fan of Marvel Movies.To be specific,I admire Steve Rogers,the Captain America most.</p>
+
+<!-- Like And Comment -->
+<button>Like</button>
+<h2>Leave a Comment</h2>
+<form action="{% url 'blog:home_page' %}"method="POST">
+{% csrf_token %}
+ <input type="text" placeholder="Please Enter Your username" name="username"><br><br>
+ <textarea name="comment" placeholder="Please Enter Your Comment"></textarea><br>
+ <input type="submit" value="Post Me!">
+ </form>
+
+<h2>Comments</h2>
+ User {{username}} says: {{comment}}
 </body>
 </html>
